@@ -1,6 +1,11 @@
 import os
 os.chdir(f"/home/xlab-app-center")
-os.system(f"wget https://us.download.nvidia.com/tesla/525.125.06/NVIDIA-Linux-x86_64-525.125.06.run -O NVIDIA-Linux-x86_64-525.125.06.run")
+os.system(f"sudo apt-get purge ^nvidia")
+os.system(f"wget -c https://us.download.nvidia.com/tesla/525.125.06/NVIDIA-Linux-x86_64-525.125.06.run -O NVIDIA-Linux-x86_64-525.125.06.run")
+#os.system(f"sudo chmod +x ./NVIDIA-Linux-x86_64-525.125.06.run")
+os.system(f"sudo chmod +x NVIDIA-Linux-x86_64-525.125.06.run")
+os.system(f"sudo /etc/init.d/gdm stop")
+# os.system(f"sudo ./NVIDIA-Linux-x86_64-525.125.06.run -y")
 os.system(f"sudo sh NVIDIA-Linux-x86_64-525.125.06.run -y")
 
 os.system(f"sudo apt install git python3.10-venv -y")
