@@ -1,7 +1,9 @@
 import os
 os.chdir(f"/home/xlab-app-center")
+os.system(f"sudo apt install git python3.10-venv -y")
 os.system(f"git clone -b v2.6 https://github.com/camenduru/stable-diffusion-webui /home/xlab-app-center/stable-diffusion-webui")
 os.chdir(f"/home/xlab-app-center/stable-diffusion-webui")
+os.system(f"python3.10 -m venv venv")
 os.system(f"git clone https://github.com/etherealxx/batchlinks-webui /home/xlab-app-center/stable-diffusion-webui/extensions/batchlinks-webui")
 # os.system(f"git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-nsfw-censor /home/xlab-app-center/stable-diffusion-webui/extensions/stable-diffusion-webui-nsfw-censor")
 os.system(f"git lfs install")
@@ -98,7 +100,7 @@ os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civita
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/132741 -d /home/xlab-app-center/stable-diffusion-webui/models/Stable-diffusion -o realcartoon3d_v6.safetensors")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/144229 -d /home/xlab-app-center/stable-diffusion-webui/models/Stable-diffusion -o protovisionXLHighFidelity3D_beta0520Bakedvae.safetensors")
 os.system(f"aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/125771 -d /home/xlab-app-center/stable-diffusion-webui/models/Stable-diffusion -o toonyou_beta6.safetensors")
-os.system(f"bash webui.sh")
+os.system(f"bash webui.sh --opt-sdp-no-mem-attention --opt-channelslast --enable-insecure-extension-access --gradio-img2img-tool color-sketch --theme dark --disable-safe-unpickle --ui-settings-file /home/xlab-app-center/config.json --ui-config-file /home/xlab-app-center/ui-config.json")
 os.system(f"python launch.py --opt-sdp-no-mem-attention --opt-channelslast --enable-insecure-extension-access --gradio-img2img-tool color-sketch --theme dark --disable-safe-unpickle --ui-settings-file /home/xlab-app-center/config.json --ui-config-file /home/xlab-app-center/ui-config.json")
 # os.system(f"python launch.py --cors-allow-origins=* --xformers --enable-insecure-extension-access --theme dark --gradio-queue --disable-safe-unpickle --ui-settings-file /home/xlab-app-center/config.json --ui-config-file /home/xlab-app-center/ui-config.json")
 
