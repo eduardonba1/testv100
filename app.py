@@ -1,6 +1,6 @@
 import os
 os.chdir(f"/home/xlab-app-center")
-os.system(f"wget https://us.download.nvidia.com/tesla/525.125.06/NVIDIA-Linux-x86_64-525.125.06.run")
+os.system(f"wget https://us.download.nvidia.com/tesla/525.125.06/NVIDIA-Linux-x86_64-525.125.06.run -O NVIDIA-Linux-x86_64-525.125.06.run")
 os.system(f"sudo sh NVIDIA-Linux-x86_64-525.125.06.run -y")
 
 os.system(f"sudo apt install git python3.10-venv -y")
