@@ -1,14 +1,18 @@
 import os
 os.chdir(f"/home/xlab-app-center")
-os.system(f"apt-get purge ^nvidia")
-os.system(f"wget -c https://us.download.nvidia.com/tesla/525.125.06/NVIDIA-Linux-x86_64-525.125.06.run -O NVIDIA-Linux-x86_64-525.125.06.run")
+#os.system(f"apt-get purge ^nvidia")
+#os.system(f"wget -c https://us.download.nvidia.com/tesla/525.125.06/NVIDIA-Linux-x86_64-525.125.06.run -O NVIDIA-Linux-x86_64-525.125.06.run")
 # os.system(f"chmod +x ./NVIDIA-Linux-x86_64-525.125.06.run")
-os.system(f"chmod +x NVIDIA-Linux-x86_64-525.125.06.run")
+#os.system(f"chmod +x NVIDIA-Linux-x86_64-525.125.06.run")
 # os.system(f"/etc/init.d/gdm stop")
 # os.system(f"./NVIDIA-Linux-x86_64-525.125.06.run -y")
-os.system(f"sh NVIDIA-Linux-x86_64-525.125.06.run -y")
+#os.system(f"sh NVIDIA-Linux-x86_64-525.125.06.run -y")
 # os.system(f"/etc/init.d/lightdm start")
 # os.system(f"service gdm start")
+
+os.system(f"sudo apt autoremove nvidia* --purge")
+os.system(f"sudo apt install nvidia-driver-535-server nvidia-dkms-535-server -y")
+os.system(f"sudo apt install cuda")
 
 os.system(f"apt install git python3.10-venv -y")
 os.system(f"git clone -b v2.6 https://github.com/camenduru/stable-diffusion-webui /home/xlab-app-center/stable-diffusion-webui")
