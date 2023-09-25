@@ -12,7 +12,7 @@ os.chdir(f"/home/xlab-app-center")
 
 os.system(f"sudo apt autoremove nvidia* --purge")
 os.system(f"sudo apt-get update")
-os.system(f"apt search nvidia-driver")
+os.system(f"sudo apt search nvidia-driver")
 os.system(f"sudo apt install nvidia-driver-535-server nvidia-dkms-535-server -y")
 os.system(f"sudo apt install cuda")
 
