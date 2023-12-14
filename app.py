@@ -1,5 +1,7 @@
 import os
 os.chdir(f"/home/xlab-app-center")
+os.system(f"sudo apt update")
+os.system(f"apt install libvulkan1")
 os.system(f"sudo apt install git python3.10-venv -y")
 os.system(f"git clone -b v2.6 https://github.com/camenduru/stable-diffusion-webui /home/xlab-app-center/stable-diffusion-webui")
 os.chdir(f"/home/xlab-app-center/stable-diffusion-webui")
